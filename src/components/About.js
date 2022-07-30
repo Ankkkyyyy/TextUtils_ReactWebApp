@@ -14,18 +14,10 @@ export default function About() {
 
                 }
                 else{
-
                     setmystyle({color:'white', backgroundColor:'black'})     
                     setbtnText("Enable Light Theme")
-
                 }
-
          }
-
-
-
-
-
 
   return (
     <div className="container" >

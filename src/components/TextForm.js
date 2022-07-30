@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-
-
-
 export default function TextForm(props) {
 
    const [textArea,setTextArea] = useState("");
@@ -45,13 +42,15 @@ const handleCopy = () =>{
 
   return (
     <>
-    <div className="container" >
+    <div className="container" style={{color:props.mode=='dark'? 'grey' :'light'}} >
 
 
 
-      <h3 className="text-center text-dark">{props.heading} </h3>
+      <h3 className="text-center" style={{color:props.mode=='dark'? 'white':'black'}}  >{props.heading} </h3>
       <div className="mb-3 mt-3 my-3">
-        <textarea className="form-control" id="txtArea" rows="9" value={textArea} onChange={handleOnchange}  >
+        <textarea className="form-control" id="txtArea" rows="9" value={textArea} onChange={handleOnchange} 
+        
+        style={{backgroundColor:props.mode=='dark'? 'white' :'white',color:props.mode=='dark'?'black':'black'}}  >
          
         </textarea>
       </div>
@@ -62,16 +61,16 @@ const handleCopy = () =>{
       <button className="btn btn-primary ms-3" onClick={handleClearClick} >Clear</button>
       </div>
 
-      <div className="container my-3">
-        <h2 className="text-dark" >Your Text Summary</h2>
+      <div className="container my-3"  >
+        <h2 style={{color:props.mode=='dark'? 'white':'black'}}  >Your Text Summary</h2>
         {/* <p> <b>Total words:</b> {textArea.split(" ").length}  </p> */}
-        <p className="text-dark" > <b> Total Words :</b>   {textArea.length>=1? textArea.split(" ").length : 0} </p>
-        <p className="text-dark"> <b >Total characters : </b> {textArea.length}</p>
+        <p style={{color:props.mode=='dark'? 'white':'black'}} > <b> Total Words :</b>   {textArea.length>=1? textArea.split(" ").length : 0} </p>
+        <p style={{color:props.mode=='dark'? 'white':'black'}} > <b >Total characters : </b> {textArea.length}</p>
 
-        <p className="text-dark" >{  0.008 * textArea.split(" ").length} Minutes read. </p>
+        <p style={{color:props.mode=='dark'? 'white':'black'}} >{  0.008 * textArea.split(" ").length} Minutes read. </p>
      
-        <h2 className="text-dark">Preview</h2>
-        <p className="text-dark" >{textArea}</p>
+        <h2 style={{color:props.mode=='dark'? 'white':'black'}} >Preview</h2>
+        <p style={{color:props.mode=='dark'? 'white':'black'}}  >{textArea.length>0?textArea:"Enter something to preview it....."  }</p>
         
       </div>
     </>
