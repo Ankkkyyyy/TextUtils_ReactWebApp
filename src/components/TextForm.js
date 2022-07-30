@@ -54,11 +54,11 @@ const handleCopy = () =>{
          
         </textarea>
       </div>
-      <button className="btn btn-primary" onClick={handleUpClick} >Convert to Uppercase</button>
-      <button className="btn btn-primary ms-3" onClick={handleLowClick} >Convert to Lowercase</button>
-      <button className="btn btn-primary ms-3" onClick={handleReverseClick} >Reverse</button>
-      <button className="btn btn-primary ms-3"  onClick={handleCopy} >Copy</button>
-      <button className="btn btn-primary ms-3" onClick={handleClearClick} >Clear</button>
+      <button className="btn"  style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleUpClick} >Convert to Uppercase</button>
+      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}   onClick={handleLowClick} >Convert to Lowercase</button>
+      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleReverseClick} >Reverse</button>
+      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleCopy} >Copy</button>
+      <button className="btn  ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleClearClick} >Clear</button>
       </div>
 
       <div className="container my-3"  >
