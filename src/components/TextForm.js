@@ -7,27 +7,32 @@ export default function TextForm(props) {
    const handleUpClick=()=>{
         // console.log("uppercase was clicked...")
         setTextArea(textArea.toUpperCase())
+        props.showAlert("Converted to uppercase..","success")
     }
     const handleLowClick=()=>{
       // console.log("uppercase was clicked...")
       setTextArea(textArea.toLowerCase())
+      props.showAlert("Converted to lowercase..","success")
   }
 
   const handleClearClick=()=>{
     // console.log("uppercase was clicked...")
     setTextArea("");
+    props.showAlert("your textbox is clear...","success")
 }
 
 const handleReverseClick=()=>{
   // console.log("uppercase was clicked...")
   let reverse = [...textArea].reverse().join("")
   setTextArea(reverse);
+  props.showAlert("your text is reversed","success")
 }
 
 const handleCopy = () =>{
   let text = document.getElementById("txtArea")
   text.select();
   navigator.clipboard.writeText(text.value);
+  props.showAlert("Copied to clipboard","dark")
   
 }
 
@@ -42,7 +47,7 @@ const handleCopy = () =>{
 
   return (
     <>
-    <div className="container" style={{color:props.mode=='dark'? 'grey' :'light'}} >
+    <div className="container mt-3" style={{color:props.mode=='dark'? 'grey' :'light'}} >
 
 
 
