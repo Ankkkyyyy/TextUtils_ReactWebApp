@@ -5,7 +5,8 @@ import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import ReactDOM from "react-dom/client";
+
+import Footer from './components/footer';
 import {
   BrowserRouter,
   Routes,
@@ -57,6 +58,8 @@ function App() {
         <Route path="/" element={ <TextForm  showAlert={showAlert}  heading="Enter the text to analyze below" mode={mode} />} />
          <Route path="/about" element={<About  mode={mode} />} />
     </Routes>
+
+    <Footer mode={mode} />
  
 
  

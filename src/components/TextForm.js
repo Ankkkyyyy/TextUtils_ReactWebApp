@@ -36,6 +36,14 @@ const handleCopy = () =>{
   
 }
 
+const handleExtraSpace= ()=>{
+
+  // const extraspace = textArea.split("  ").join(" ");
+  const extraspace = textArea.replace(/\s+/g, ' ').trim()
+  setTextArea(extraspace)
+
+}
+
    const handleOnchange = (event) =>{
    
             setTextArea(event.target.value);
@@ -47,7 +55,7 @@ const handleCopy = () =>{
 
   return (
     <>
-    <div className="container mt-3" style={{color:props.mode=='dark'? 'grey' :'light'}} >
+    <div className="container mt-3 col-xl-10 col-lg-6 " style={{color:props.mode=='dark'? 'grey' :'light'}} >
 
 
 
@@ -59,20 +67,26 @@ const handleCopy = () =>{
          
         </textarea>
       </div>
-      <button className="btn"  style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleUpClick} >Convert to Uppercase</button>
-      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}   onClick={handleLowClick} >Convert to Lowercase</button>
-      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleReverseClick} >Reverse</button>
-      <button className="btn ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleCopy} >Copy</button>
-      <button className="btn  ms-3" style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleClearClick} >Clear</button>
+
+     
+      </div>
+      <div className="container  d-flex flex-column mb-5 ">
+      <button className="btn md-ms-3 mt-3 m-1 p-2  "  style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleUpClick} >Convert to Uppercase </button>
+      <button className="btn md-ms-3 mt-3 m-1 p-2    " style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}   onClick={handleLowClick} >Convert to Lowercase </button>
+      <button className="btn md-ms-3 mt-3 m-1 p-2    " style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleReverseClick} >Reverse</button>
+      <button className="btn md-ms-3 mt-3 m-1 p-2   " style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleExtraSpace} >Remove Extraspace</button>
+      <button className="btn md-ms-3 mt-3 m-1 p-2   " style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleCopy} >Copy</button>
+      <button className="btn  md-ms-3 mt-3 m-1  p-2    " style={{backgroundColor:props.mode=='dark'? '#6C62CA' :'#1D127E',color:props.mode=='dark'?'white':'white'}}  onClick={handleClearClick} >Clear</button>
+
       </div>
 
-      <div className="container my-3"  >
+      <div className="container  mt-4"  >
         <h2 style={{color:props.mode=='dark'? 'white':'black'}}  >Your Text Summary</h2>
         {/* <p> <b>Total words:</b> {textArea.split(" ").length}  </p> */}
         <p style={{color:props.mode=='dark'? 'white':'black'}} > <b> Total Words :</b>   {textArea.length>=1? textArea.split(" ").length : 0} </p>
         <p style={{color:props.mode=='dark'? 'white':'black'}} > <b >Total characters : </b> {textArea.length}</p>
 
-        <p style={{color:props.mode=='dark'? 'white':'black'}} >{  0.008 * textArea.split(" ").length} Minutes read. </p>
+        <p style={{color:props.mode=='dark'? 'white':'black'}} >{  0.008 * textArea.split(" ").length} <b>Minutes read.</b>  </p>
      
         <h2 style={{color:props.mode=='dark'? 'white':'black'}} >Preview</h2>
         <p style={{color:props.mode=='dark'? 'white':'black'}}  >{textArea.length>0?textArea:"Enter something to preview it....."  }</p>
