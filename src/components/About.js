@@ -3,21 +3,18 @@ import React, { useState } from "react";
 export default function About(props) {
 
 
-    const [mystyle,setmystyle]=useState({ color:'black', backgroundColor:'white' })
-    const  [btnText,setbtnText] = useState("Enable Dark Theme");
+    // const [mystyle,setmystyle]=useState({ color:'black', backgroundColor:'white' })
 
-        const ThemeMode = ()=>{
-                if(mystyle.color=="white")
-                {
-                setmystyle({color:'black', backgroundColor:'white'})
-                setbtnText("Enable Dark Theme")
+    const mystyle = {
 
-                }
-                else{
-                    setmystyle({color:'white', backgroundColor:'black'})     
-                    setbtnText("Enable Light Theme")
-                }
-         }
+      color:props.mode=="dark"?'white':'#042743',
+      backgroundColor: props.mode=='dark'?'rgb(36 74 104)':'white',
+      border: '2px solid'
+
+
+    }
+
+
 
   return (
     <div className="container mt-3 " >
@@ -34,7 +31,7 @@ export default function About(props) {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+            <strong> Analyze Your Text</strong> 
             </button>
           </h2>
           <div
@@ -44,14 +41,7 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mystyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Textutils  gives you a way to analyze your text quickly & efficiently.
             </div>
           </div>
         </div>
@@ -66,7 +56,7 @@ export default function About(props) {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+            <strong>   Free to use</strong> 
             </button>
           </h2>
           <div
@@ -76,14 +66,7 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body" style={mystyle}> 
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+             Textutils is a free character counter tool that provides instant character count & word count statistics for a given text.
             </div>
           </div>
         </div>
@@ -98,7 +81,7 @@ export default function About(props) {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+            <strong>   Browser Compatible</strong> 
             </button>
           </h2>
           <div
@@ -108,23 +91,13 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body" style={mystyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+             This word counter software works in all web browser such as Chrome,Edge,Firefox,Brave,Safari,opera etc.
+             user can use it for counting & formatting text for their social media post, essays pdf documents & blog post.
             </div>
           </div>
         </div>
       </div>
 
-
-      <div class="container my-3">
-      <button type="button" class="btn btn-primary" onClick={ThemeMode} >{btnText}</button>
-      </div> 
     </div>
   );
 }
