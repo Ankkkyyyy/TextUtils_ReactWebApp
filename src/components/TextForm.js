@@ -29,9 +29,7 @@ const handleReverseClick=()=>{
 }
 
 const handleCopy = () =>{
-  let text = document.getElementById("txtArea")
-  text.select();
-  navigator.clipboard.writeText(text.value);
+  navigator.clipboard.writeText(textArea);
   document.getSelection().removeAllRanges()
   props.showAlert("Copied to clipboard","dark")
   
@@ -51,9 +49,7 @@ const handleExtraSpace= ()=>{
 
     }
 
-   
-
-
+  
   return (
     <>
     <div className="container mt-3 col-xl-10 col-lg-6 " style={{color:props.mode=='dark'? 'grey' :'light'}} >
@@ -85,7 +81,7 @@ const handleExtraSpace= ()=>{
         <h2 style={{color:props.mode=='dark'? 'white':'black'}}  >Your Text Summary</h2>
         {/* <p> <b>Total words:</b> {textArea.split(" ").length}  </p> */}
         {/* <p style={{color:props.mode=='dark'? 'white':'black'}} > <b> Total Words :</b>   {textArea.length>=1? textArea.split(" ").length : 0} </p> */}
-        <p style={{color:props.mode=='dark'? 'white':'black'}} > <b> Total Words : </b>{textArea.split(" ").filter((element)=>{return element.length!==0}).length} </p>
+        <p style={{color:props.mode=='dark'? 'white':'black'}} > <b> Total Words : </b>{textArea.split(/\s+/).filter((element)=>{return element.length!==0}).length} </p>
      
         <p style={{color:props.mode=='dark'? 'white':'black'}} > <b >Total characters : </b> {textArea.length}</p>
 
